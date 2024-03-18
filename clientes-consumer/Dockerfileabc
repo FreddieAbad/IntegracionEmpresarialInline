@@ -1,0 +1,9 @@
+FROM python:3.9
+
+WORKDIR /app
+
+COPY empresaABC.py .
+
+RUN pip install flask
+
+CMD ["python", "empresaABC.py"]

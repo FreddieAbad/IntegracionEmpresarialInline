@@ -1,66 +1,41 @@
 
 package org.apache.camel.learn.builder;
 
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.dataformat.bindy.csv.BindyCsvDataFormat;
-import org.apache.camel.learn.model.LineModel;
-import org.apache.camel.learn.processor.CountProcessor;
-import org.apache.camel.learn.processor.FinProcessor;
-import org.apache.camel.learn.processor.InsertProcesor;
-import org.apache.camel.learn.processor.LineProcesor;
-import org.apache.camel.spi.DataFormat;
-import org.apache.camel.builder.PredicateBuilder;
-import java.util.Properties;
+import org.apache.camel.learn.model.ClientInfo;
+import org.apache.camel.model.dataformat.JsonLibrary;
+
+
 
 public class MyRouteBuilder extends RouteBuilder {
 
-    DataFormat bindy = new BindyCsvDataFormat(LineModel.class);
-    Properties properties = new Properties();
-
-
-
     @Override
     public void configure() throws Exception {
-        properties.load(getClass().getClassLoader().getResourceAsStream("application.properties"));
-
-        String ruta = properties.getProperty("ruta");
-
-        String filename = properties.getProperty("filename");
-        String databaseJDBCConnection = properties.getProperty("database.jdbc.connection");
-        String databaseUserConnection = properties.getProperty("database.user");
-        String databasePasswordConnection = properties.getProperty("database.password");
-
-        String uri= "file:"+ruta+"?noop=True&fileName="+filename+"&delay=300000";
-        //"file:src/datos?noop=True&fileName=cardsclients.csv&delay=3000"
-
-        from(uri)
-                .setHeader("rutaFile", constant(ruta + "/"+filename))
-                .to("direct:countRecords")
-                .log("INICIO DE PROCESAMIENTO")
-                .split().tokenize("\n")
-                .filter(body().isNotNull())
-                .unmarshal(bindy)
-                .to("direct:validateLine")
-                .to("direct:validateFinProcess");
-
-        from("direct:validateLine")
-                .process(new LineProcesor())
+        from("jetty:http://0.0.0.0:80/receive_client_info?httpMethodRestrict=POST")
+                .routeId("ValidaCanal")
+                .unmarshal().json(JsonLibrary.Jackson, ClientInfo.class)
+                .process(new Processor() {
+                    public void process(Exchange exchange) throws Exception {
+                        ClientInfo persona = exchange.getIn().getBody(ClientInfo.class);
+                        exchange.getMessage().setHeader("canal", persona.getCanal());
+//                        System.out.println(persona.toString());
+                    }
+                })
                 .choice()
-                .when(PredicateBuilder.and(header("pagos").isEqualTo(false), header("bills").isEqualTo(false)))
-                .to("direct:processInsert")
-                .end()
+                .when(header("canal").isEqualTo("online"))
+                .to("direct:servicioA")
+                .otherwise()
+                .to("direct:servicioB")
                 .end();
 
-        from("direct:processInsert")
-                .process(new InsertProcesor(databaseJDBCConnection, databaseUserConnection, databasePasswordConnection));
+        from("direct:servicioA")
+                .routeId("ServicioA")
+                .log("**Enviando a Servicio A:** ${body}");
 
-        from("direct:countRecords")
-                .process(new CountProcessor());
-
-        from("direct:validateFinProcess")
-                .process(new FinProcessor());
-
+        from("direct:servicioB")
+                .routeId("ServicioB")
+                .log("**Enviando a Servicio B:** ${body}");
     }
-
-
 }
