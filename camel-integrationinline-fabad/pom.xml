@@ -94,6 +94,12 @@
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-jackson</artifactId>
             <version>3.16.0</version> </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-http</artifactId>
+            <version>4.0.4</version> <!-- Usa la versión adecuada -->
+        </dependency>
+
 
         <!-- testing -->
         <dependency>

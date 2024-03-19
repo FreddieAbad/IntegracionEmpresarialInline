@@ -1,3 +1,6 @@
+GET usuarios
+http://0.0.0.0:80/users/offline
+http://0.0.0.0:80/users/online
 POST VALIDA CANAL
 http://localhost:80/receive_client_info
 
