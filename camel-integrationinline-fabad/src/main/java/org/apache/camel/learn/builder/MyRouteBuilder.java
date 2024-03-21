@@ -41,25 +41,25 @@ public class MyRouteBuilder extends RouteBuilder {
                 .log("**Enviando a Servicio A:** ${body}")
                 .process(new ServicioAProcessor())
                 .setHeader(Exchange.HTTP_METHOD, constant("POST"))
-                .to("http://localhost:8080/users?bridgeEndpoint=true");
+                .to("http://service1:8080/users?bridgeEndpoint=true");
 
         from("direct:servicioB")
                 .routeId("ServicioB")
                 .log("**Enviando a Servicio B:** ${body}")
                 .process(new ServicioBProcessor())
                 .setHeader(Exchange.HTTP_METHOD, constant("POST"))
-                .to("http://localhost:5000/users?bridgeEndpoint=true");
+                .to("http://service2:5000/users?bridgeEndpoint=true");
 
         from("direct:servicioBD")
                 .routeId("ServicioBD")
                 .log("**Enviando a Servicio BD:** ${body}")
                 .setHeader(Exchange.HTTP_METHOD, constant("GET"))
-                .to("http://localhost:5000/get_users?bridgeEndpoint=true");
+                .to("http://service2:5000/get_users?bridgeEndpoint=true");
 
         from("direct:servicioAC")
                 .routeId("ServicioAC")
                 .log("**Enviando a Servicio AC:** ${body}")
                 .setHeader(Exchange.HTTP_METHOD, constant("GET"))
-                .to("http://localhost:8080/get_users?bridgeEndpoint=true");
+                .to("http://service1:8080/get_users?bridgeEndpoint=true");
     }
 }

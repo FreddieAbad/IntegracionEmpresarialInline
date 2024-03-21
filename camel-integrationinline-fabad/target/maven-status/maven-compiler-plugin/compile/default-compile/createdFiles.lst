@@ -1,0 +1,6 @@
+org\apache\camel\learn\model\ClientInfo.class
+org\apache\camel\learn\MainApp.class
+org\apache\camel\learn\processor\ServicioBProcessor.class
+org\apache\camel\learn\processor\ValidaCanalProcessor.class
+org\apache\camel\learn\builder\MyRouteBuilder.class
+org\apache\camel\learn\processor\ServicioAProcessor.class

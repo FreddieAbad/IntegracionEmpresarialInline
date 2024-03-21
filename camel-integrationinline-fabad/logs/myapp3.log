@@ -1795,3 +1795,386 @@ org.apache.camel.component.direct.DirectConsumerNotAvailableException: No consum
 [                                              main] || AbstractCamelContext           || INFO  ||     Stopped ValidaCanal (jetty:http://0.0.0.0:80/receive_client_info)
 [                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) shutdown in 63ms (uptime:40s)
 [                                              main] || MainSupport                    || INFO  || Apache Camel (Main) 4.0.4 shutdown
+[                                              main] || MainSupport                    || INFO  || Apache Camel (Main) 4.0.4 is starting
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) is starting
+[                                              main] || Server                         || INFO  || jetty-11.0.17; built: 2023-10-09T18:39:14.424Z; git: 48e7716b9462bebea6732b885dbebb4300787a5c; jvm 21.0.2+13-58
+[                                              main] || ContextHandler                 || INFO  || Started o.e.j.s.ServletContextHandler@19b047fe{/,null,AVAILABLE}
+[                                              main] || AbstractConnector              || INFO  || Started ServerConnector@1aa99005{HTTP/1.1, (http/1.1)}{0.0.0.0:80}
+[                                              main] || Server                         || INFO  || Started Server@724c5cbe{STARTING}[11.0.17,sto=0] @3674ms
+[                                              main] || AbstractCamelContext           || INFO  || Routes startup (started:7)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ValidaCanal (jetty:http://0.0.0.0:80/receive_client_info)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started OnlineService (jetty:http://0.0.0.0:80/users/online)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started OfflineService (jetty:http://0.0.0.0:80/users/offline)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioA (direct://servicioA)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioB (direct://servicioB)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioBD (direct://servicioBD)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioAC (direct://servicioAC)
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) started in 716ms (build:0ms init:0ms start:716ms)
+[                                    qtp36707189-38] || ServicioAC                     || INFO  || **Enviando a Servicio AC:** 
+[                                              main] || MainSupport                    || INFO  || Apache Camel (Main) 4.0.4 is starting
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) is starting
+[                                              main] || Server                         || INFO  || jetty-11.0.17; built: 2023-10-09T18:39:14.424Z; git: 48e7716b9462bebea6732b885dbebb4300787a5c; jvm 21.0.2+13-58
+[                                              main] || ContextHandler                 || INFO  || Started o.e.j.s.ServletContextHandler@36b310aa{/,null,AVAILABLE}
+[                                              main] || AbstractConnector              || INFO  || Started ServerConnector@11a00961{HTTP/1.1, (http/1.1)}{0.0.0.0:80}
+[                                              main] || Server                         || INFO  || Started Server@12b5454f{STARTING}[11.0.17,sto=0] @3939ms
+[                                              main] || AbstractCamelContext           || INFO  || Routes startup (started:7)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ValidaCanal (jetty:http://0.0.0.0:80/receive_client_info)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started OnlineService (jetty:http://0.0.0.0:80/users/online)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started OfflineService (jetty:http://0.0.0.0:80/users/offline)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioA (direct://servicioA)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioB (direct://servicioB)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioBD (direct://servicioBD)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioAC (direct://servicioAC)
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) started in 651ms (build:0ms init:0ms start:651ms)
+[                                  qtp1067936865-33] || ServicioB                      || INFO  || **Enviando a Servicio B:** ClientInfo{codigo=123456, identificacion='user2', nombre='Juan Perez', email='user2@example.com', canal='offline'}
+[                                  qtp1067936865-31] || ServicioA                      || INFO  || **Enviando a Servicio A:** ClientInfo{codigo=123456, identificacion='user2', nombre='Juan Perez', email='user2@example.com', canal='online'}
+[                                  qtp1067936865-36] || ServicioA                      || INFO  || **Enviando a Servicio A:** ClientInfo{codigo=789, identificacion='useronline', nombre='online Perez', email='useronline@example.com', canal='online'}
+[                                  qtp1067936865-41] || ServicioAC                     || INFO  || **Enviando a Servicio AC:** {
+        "codigo": 789,
+        "identificacion": "useronline",
+        "nombre": "online Perez",
+        "email": "useronline@example.com",
+        "canal": "online"
+}
+[                                  qtp1067936865-36] || ServicioBD                     || INFO  || **Enviando a Servicio BD:** 
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) is shutting down (timeout:45s)
+[          Camel (camel-1) thread #2 - ShutdownTask] || AbstractConnector              || INFO  || Stopped ServerConnector@11a00961{HTTP/1.1, (http/1.1)}{0.0.0.0:80}
+[          Camel (camel-1) thread #2 - ShutdownTask] || Server                         || INFO  || Stopped Server@12b5454f{STOPPING}[11.0.17,sto=0]
+[          Camel (camel-1) thread #2 - ShutdownTask] || ContextHandler                 || INFO  || Stopped o.e.j.s.ServletContextHandler@36b310aa{/,null,STOPPED}
+[                                              main] || AbstractCamelContext           || INFO  || Routes stopped (stopped:7)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioAC (direct://servicioAC)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioBD (direct://servicioBD)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioB (direct://servicioB)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioA (direct://servicioA)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped OfflineService (jetty:http://0.0.0.0:80/users/offline)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped OnlineService (jetty:http://0.0.0.0:80/users/online)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ValidaCanal (jetty:http://0.0.0.0:80/receive_client_info)
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) shutdown in 34ms (uptime:8m40s)
+[                                              main] || MainSupport                    || INFO  || Apache Camel (Main) 4.0.4 shutdown
+[                                              main] || MainSupport                    || INFO  || Apache Camel (Main) 4.0.4 is starting
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) is starting
+[                                              main] || Server                         || INFO  || jetty-11.0.17; built: 2023-10-09T18:39:14.424Z; git: 48e7716b9462bebea6732b885dbebb4300787a5c; jvm 21.0.2+13-58
+[                                              main] || ContextHandler                 || INFO  || Started o.e.j.s.ServletContextHandler@1fba386c{/,null,AVAILABLE}
+[                                              main] || AbstractConnector              || INFO  || Started ServerConnector@49cf9028{HTTP/1.1, (http/1.1)}{0.0.0.0:80}
+[                                              main] || Server                         || INFO  || Started Server@2add4d24{STARTING}[11.0.17,sto=0] @3090ms
+[                                              main] || AbstractCamelContext           || INFO  || Routes startup (started:7)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ValidaCanal (jetty:http://0.0.0.0:80/receive_client_info)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started OnlineService (jetty:http://0.0.0.0:80/users/online)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started OfflineService (jetty:http://0.0.0.0:80/users/offline)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioA (direct://servicioA)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioB (direct://servicioB)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioBD (direct://servicioBD)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioAC (direct://servicioAC)
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) started in 611ms (build:0ms init:0ms start:611ms)
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) is shutting down (timeout:45s)
+[          Camel (camel-1) thread #2 - ShutdownTask] || AbstractConnector              || INFO  || Stopped ServerConnector@49cf9028{HTTP/1.1, (http/1.1)}{0.0.0.0:80}
+[          Camel (camel-1) thread #2 - ShutdownTask] || Server                         || INFO  || Stopped Server@2add4d24{STOPPING}[11.0.17,sto=0]
+[          Camel (camel-1) thread #2 - ShutdownTask] || ContextHandler                 || INFO  || Stopped o.e.j.s.ServletContextHandler@1fba386c{/,null,STOPPED}
+[                                              main] || AbstractCamelContext           || INFO  || Routes stopped (stopped:7)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioAC (direct://servicioAC)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioBD (direct://servicioBD)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioB (direct://servicioB)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioA (direct://servicioA)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped OfflineService (jetty:http://0.0.0.0:80/users/offline)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped OnlineService (jetty:http://0.0.0.0:80/users/online)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ValidaCanal (jetty:http://0.0.0.0:80/receive_client_info)
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) shutdown in 45ms (uptime:7m54s)
+[                                              main] || MainSupport                    || INFO  || Apache Camel (Main) 4.0.4 shutdown
+[                                              main] || MainSupport                    || INFO  || Apache Camel (Main) 4.0.4 is starting
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) is starting
+[                                              main] || Server                         || INFO  || jetty-11.0.17; built: 2023-10-09T18:39:14.424Z; git: 48e7716b9462bebea6732b885dbebb4300787a5c; jvm 21.0.2+13-58
+[                                              main] || ContextHandler                 || INFO  || Started o.e.j.s.ServletContextHandler@48cd9a2c{/,null,AVAILABLE}
+[                                              main] || AbstractConnector              || INFO  || Started ServerConnector@1cc9cfb2{HTTP/1.1, (http/1.1)}{0.0.0.0:80}
+[                                              main] || Server                         || INFO  || Started Server@604b1e1d{STARTING}[11.0.17,sto=0] @3501ms
+[                                              main] || AbstractCamelContext           || INFO  || Routes startup (started:7)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ValidaCanal (jetty:http://0.0.0.0:80/receive_client_info)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started OnlineService (jetty:http://0.0.0.0:80/users/online)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started OfflineService (jetty:http://0.0.0.0:80/users/offline)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioA (direct://servicioA)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioB (direct://servicioB)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioBD (direct://servicioBD)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioAC (direct://servicioAC)
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) started in 700ms (build:0ms init:0ms start:700ms)
+[                                   qtp582819897-33] || ServicioA                      || INFO  || **Enviando a Servicio A:** ClientInfo{codigo=7, identificacion='user2', nombre='Juan Perez', email='user2@example.com', canal='online'}
+[                                   qtp582819897-33] || DefaultErrorHandler            || ERROR || Failed delivery for (MessageId: CFB99016F395C92-0000000000000000 on ExchangeId: CFB99016F395C92-0000000000000000). Exhausted after delivery attempt: 1 caught: java.net.UnknownHostException: Host desconocido (service1)
+
+Message History (source location and message history is disabled)
+---------------------------------------------------------------------------------------------------------------------------------------
+Source                                   ID                             Processor                                          Elapsed (ms)
+                                         ValidaCanal/ValidaCanal        from[jetty:http://0.0.0.0:80/receive_client_info?h         2495
+	...
+                                         ServicioA/to5                  http://service1:8080/users?bridgeEndpoint=true                0
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+java.net.UnknownHostException: Host desconocido (service1)
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[?:?]
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[?:?]
+	at java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[?:?]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[?:?]
+	at java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[?:?]
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[?:?]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[?:?]
+	at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:43) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:245) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.camel.component.http.HttpProducer.executeMethod(HttpProducer.java:487) ~[camel-http-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.http.HttpProducer.process(HttpProducer.java:269) ~[camel-http-4.0.4.jar:4.0.4]
+	at org.apache.camel.support.AsyncProcessorConverterHelper$ProcessorToAsyncProcessorBridge.process(AsyncProcessorConverterHelper.java:65) ~[camel-support-4.0.4.jar:4.0.4]
+	at org.apache.camel.processor.SendProcessor.process(SendProcessor.java:172) ~[camel-core-processor-4.0.4.jar:4.0.4]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$SimpleTask.run(RedeliveryErrorHandler.java:475) ~[camel-core-processor-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.executeReactiveWork(DefaultReactiveExecutor.java:196) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.schedule(DefaultReactiveExecutor.java:164) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor.scheduleMain(DefaultReactiveExecutor.java:59) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:163) ~[camel-core-processor-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.CamelInternalProcessor.process(CamelInternalProcessor.java:383) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.jetty.CamelContinuationServlet.handleDoService(CamelContinuationServlet.java:251) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.jetty.CamelContinuationServlet.doService(CamelContinuationServlet.java:67) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.http.common.CamelServlet.handleService(CamelServlet.java:147) ~[camel-http-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.http.common.CamelServlet.service(CamelServlet.java:96) ~[camel-http-common-4.0.4.jar:4.0.4]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.apache.camel.component.jetty.MultiPartFilter.doFilter(MultiPartFilter.java:50) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.jetty.CamelFilterWrapper.doFilter(CamelFilterWrapper.java:49) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpChannel$RequestDispatchable.dispatch(HttpChannel.java:1598) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:753) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:501) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:287) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:421) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:390) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:277) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:193) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) ~[jetty-util-11.0.17.jar:11.0.17]
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[                                   qtp582819897-38] || ServicioA                      || INFO  || **Enviando a Servicio A:** ClientInfo{codigo=7, identificacion='user2', nombre='Juan Perez', email='user2@example.com', canal='online'}
+[                                   qtp582819897-38] || DefaultErrorHandler            || ERROR || Failed delivery for (MessageId: CFB99016F395C92-0000000000000001 on ExchangeId: CFB99016F395C92-0000000000000001). Exhausted after delivery attempt: 1 caught: java.net.UnknownHostException: Host desconocido (service1)
+
+Message History (source location and message history is disabled)
+---------------------------------------------------------------------------------------------------------------------------------------
+Source                                   ID                             Processor                                          Elapsed (ms)
+                                         ValidaCanal/ValidaCanal        from[jetty:http://0.0.0.0:80/receive_client_info?h         2297
+	...
+                                         ServicioA/to5                  http://service1:8080/users?bridgeEndpoint=true                0
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+java.net.UnknownHostException: Host desconocido (service1)
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[?:?]
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[?:?]
+	at java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[?:?]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[?:?]
+	at java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[?:?]
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[?:?]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[?:?]
+	at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:43) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:245) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.camel.component.http.HttpProducer.executeMethod(HttpProducer.java:487) ~[camel-http-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.http.HttpProducer.process(HttpProducer.java:269) ~[camel-http-4.0.4.jar:4.0.4]
+	at org.apache.camel.support.AsyncProcessorConverterHelper$ProcessorToAsyncProcessorBridge.process(AsyncProcessorConverterHelper.java:65) ~[camel-support-4.0.4.jar:4.0.4]
+	at org.apache.camel.processor.SendProcessor.process(SendProcessor.java:172) ~[camel-core-processor-4.0.4.jar:4.0.4]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$SimpleTask.run(RedeliveryErrorHandler.java:475) ~[camel-core-processor-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.executeReactiveWork(DefaultReactiveExecutor.java:196) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.schedule(DefaultReactiveExecutor.java:164) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor.scheduleMain(DefaultReactiveExecutor.java:59) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:163) ~[camel-core-processor-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.CamelInternalProcessor.process(CamelInternalProcessor.java:383) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.jetty.CamelContinuationServlet.handleDoService(CamelContinuationServlet.java:251) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.jetty.CamelContinuationServlet.doService(CamelContinuationServlet.java:67) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.http.common.CamelServlet.handleService(CamelServlet.java:147) ~[camel-http-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.http.common.CamelServlet.service(CamelServlet.java:96) ~[camel-http-common-4.0.4.jar:4.0.4]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.apache.camel.component.jetty.MultiPartFilter.doFilter(MultiPartFilter.java:50) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.jetty.CamelFilterWrapper.doFilter(CamelFilterWrapper.java:49) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpChannel$RequestDispatchable.dispatch(HttpChannel.java:1598) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:753) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:501) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:287) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:421) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:390) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:277) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:199) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) ~[jetty-util-11.0.17.jar:11.0.17]
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) is shutting down (timeout:45s)
+[          Camel (camel-1) thread #2 - ShutdownTask] || AbstractConnector              || INFO  || Stopped ServerConnector@1cc9cfb2{HTTP/1.1, (http/1.1)}{0.0.0.0:80}
+[          Camel (camel-1) thread #2 - ShutdownTask] || Server                         || INFO  || Stopped Server@604b1e1d{STOPPING}[11.0.17,sto=0]
+[          Camel (camel-1) thread #2 - ShutdownTask] || ContextHandler                 || INFO  || Stopped o.e.j.s.ServletContextHandler@48cd9a2c{/,null,STOPPED}
+[                                              main] || AbstractCamelContext           || INFO  || Routes stopped (stopped:7)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioAC (direct://servicioAC)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioBD (direct://servicioBD)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioB (direct://servicioB)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioA (direct://servicioA)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped OfflineService (jetty:http://0.0.0.0:80/users/offline)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped OnlineService (jetty:http://0.0.0.0:80/users/online)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ValidaCanal (jetty:http://0.0.0.0:80/receive_client_info)
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) shutdown in 114ms (uptime:1m6s)
+[                                              main] || MainSupport                    || INFO  || Apache Camel (Main) 4.0.4 shutdown
+[                                              main] || MainSupport                    || INFO  || Apache Camel (Main) 4.0.4 is starting
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) is starting
+[                                              main] || Server                         || INFO  || jetty-11.0.17; built: 2023-10-09T18:39:14.424Z; git: 48e7716b9462bebea6732b885dbebb4300787a5c; jvm 21.0.2+13-58
+[                                              main] || ContextHandler                 || INFO  || Started o.e.j.s.ServletContextHandler@3bae64d0{/,null,AVAILABLE}
+[                                              main] || AbstractConnector              || INFO  || Started ServerConnector@30814f43{HTTP/1.1, (http/1.1)}{0.0.0.0:80}
+[                                              main] || Server                         || INFO  || Started Server@3ae2ed38{STARTING}[11.0.17,sto=0] @3020ms
+[                                              main] || AbstractCamelContext           || INFO  || Routes startup (started:7)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ValidaCanal (jetty:http://0.0.0.0:80/receive_client_info)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started OnlineService (jetty:http://0.0.0.0:80/users/online)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started OfflineService (jetty:http://0.0.0.0:80/users/offline)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioA (direct://servicioA)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioB (direct://servicioB)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioBD (direct://servicioBD)
+[                                              main] || AbstractCamelContext           || INFO  ||     Started ServicioAC (direct://servicioAC)
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) started in 585ms (build:0ms init:0ms start:585ms)
+[                                  qtp1473313929-41] || ServicioA                      || INFO  || **Enviando a Servicio A:** ClientInfo{codigo=7, identificacion='user2', nombre='Juan Perez', email='user2@example.com', canal='online'}
+[                                  qtp1473313929-41] || DefaultErrorHandler            || ERROR || Failed delivery for (MessageId: 59B308529F9D00F-0000000000000000 on ExchangeId: 59B308529F9D00F-0000000000000000). Exhausted after delivery attempt: 1 caught: java.net.UnknownHostException: Host desconocido (service1)
+
+Message History (source location and message history is disabled)
+---------------------------------------------------------------------------------------------------------------------------------------
+Source                                   ID                             Processor                                          Elapsed (ms)
+                                         ValidaCanal/ValidaCanal        from[jetty:http://0.0.0.0:80/receive_client_info?h         2501
+	...
+                                         ServicioA/to5                  http://service1:8080/users?bridgeEndpoint=true                0
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+java.net.UnknownHostException: Host desconocido (service1)
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[?:?]
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[?:?]
+	at java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[?:?]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[?:?]
+	at java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[?:?]
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[?:?]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[?:?]
+	at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:43) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:245) ~[httpclient5-5.2.1.jar:5.2.1]
+	at org.apache.camel.component.http.HttpProducer.executeMethod(HttpProducer.java:487) ~[camel-http-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.http.HttpProducer.process(HttpProducer.java:269) ~[camel-http-4.0.4.jar:4.0.4]
+	at org.apache.camel.support.AsyncProcessorConverterHelper$ProcessorToAsyncProcessorBridge.process(AsyncProcessorConverterHelper.java:65) ~[camel-support-4.0.4.jar:4.0.4]
+	at org.apache.camel.processor.SendProcessor.process(SendProcessor.java:172) ~[camel-core-processor-4.0.4.jar:4.0.4]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$SimpleTask.run(RedeliveryErrorHandler.java:475) ~[camel-core-processor-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.executeReactiveWork(DefaultReactiveExecutor.java:196) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.schedule(DefaultReactiveExecutor.java:164) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor.scheduleMain(DefaultReactiveExecutor.java:59) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:163) ~[camel-core-processor-4.0.4.jar:4.0.4]
+	at org.apache.camel.impl.engine.CamelInternalProcessor.process(CamelInternalProcessor.java:383) ~[camel-base-engine-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.jetty.CamelContinuationServlet.handleDoService(CamelContinuationServlet.java:251) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.jetty.CamelContinuationServlet.doService(CamelContinuationServlet.java:67) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.http.common.CamelServlet.handleService(CamelServlet.java:147) ~[camel-http-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.http.common.CamelServlet.service(CamelServlet.java:96) ~[camel-http-common-4.0.4.jar:4.0.4]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587) ~[jetty-jakarta-servlet-api-5.0.2.jar:?]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1665) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.apache.camel.component.jetty.MultiPartFilter.doFilter(MultiPartFilter.java:50) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.apache.camel.component.jetty.CamelFilterWrapper.doFilter(CamelFilterWrapper.java:49) ~[camel-jetty-common-4.0.4.jar:4.0.4]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:202) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpChannel$RequestDispatchable.dispatch(HttpChannel.java:1598) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:753) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:501) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:287) ~[jetty-server-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) ~[jetty-util-11.0.17.jar:11.0.17]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) ~[jetty-util-11.0.17.jar:11.0.17]
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) is shutting down (timeout:45s)
+[          Camel (camel-1) thread #2 - ShutdownTask] || AbstractConnector              || INFO  || Stopped ServerConnector@30814f43{HTTP/1.1, (http/1.1)}{0.0.0.0:80}
+[          Camel (camel-1) thread #2 - ShutdownTask] || Server                         || INFO  || Stopped Server@3ae2ed38{STOPPING}[11.0.17,sto=0]
+[          Camel (camel-1) thread #2 - ShutdownTask] || ContextHandler                 || INFO  || Stopped o.e.j.s.ServletContextHandler@3bae64d0{/,null,STOPPED}
+[                                              main] || AbstractCamelContext           || INFO  || Routes stopped (stopped:7)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioAC (direct://servicioAC)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioBD (direct://servicioBD)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioB (direct://servicioB)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ServicioA (direct://servicioA)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped OfflineService (jetty:http://0.0.0.0:80/users/offline)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped OnlineService (jetty:http://0.0.0.0:80/users/online)
+[                                              main] || AbstractCamelContext           || INFO  ||     Stopped ValidaCanal (jetty:http://0.0.0.0:80/receive_client_info)
+[                                              main] || AbstractCamelContext           || INFO  || Apache Camel 4.0.4 (camel-1) shutdown in 36ms (uptime:13s)
+[                                              main] || MainSupport                    || INFO  || Apache Camel (Main) 4.0.4 shutdown
