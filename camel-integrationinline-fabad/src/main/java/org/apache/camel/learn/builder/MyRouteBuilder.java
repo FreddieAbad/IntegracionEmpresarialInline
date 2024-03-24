@@ -12,43 +12,59 @@ public class MyRouteBuilder extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("jetty:http://0.0.0.0:80/receive_client_info?httpMethodRestrict=POST")
+        from("jetty:http://0.0.0.0:81/receive_client_info?httpMethodRestrict=POST")
                 .routeId("ValidaCanal")
                 .unmarshal().json(JsonLibrary.Jackson, ClientInfo.class)
                 .process(new ValidaCanalProcessor())
                 .choice()
                     .when(header("canal").isEqualTo("online"))
-                        .to("direct:servicioA")
+                        .to("direct:servicioONLINE")
                     .when(header("canal").isEqualTo("offline"))
-                        .to("direct:servicioB")
+                        .to("direct:servicioOffLINE")
                     .otherwise()
                         .setBody(constant("{\"message\": \"Canal no permitido.\"}"))
                 .end();
 
-        from("jetty:http://0.0.0.0:80/users/online?httpMethodRestrict=GET")
+        from("jetty:http://0.0.0.0:81/users/online?httpMethodRestrict=GET")
                 .routeId("OnlineService")
                 .setHeader("canal").constant("online")
                 .to("direct:servicioAC");
 
-        from("jetty:http://0.0.0.0:80/users/offline?httpMethodRestrict=GET")
+        from("jetty:http://0.0.0.0:81/users/offline?httpMethodRestrict=GET")
                 .routeId("OfflineService")
                 .setHeader("canal").constant("offline")
                 .to("direct:servicioBD");
 
 
-        from("direct:servicioA")
-                .routeId("ServicioA")
-                .log("**Enviando a Servicio A:** ${body}")
+        from("direct:servicioONLINE")
+                .routeId("ServicioONLINE")
+                .log("**Enviando a Servicio A ONLINE:** ${body}")
                 .process(new ServicioAProcessor())
-                .setHeader(Exchange.HTTP_METHOD, constant("POST"))
-                .to("http://service1:8080/users?bridgeEndpoint=true");
+                .doTry()
+                    .setHeader(Exchange.HTTP_METHOD, constant("POST"))
+                    .to("http://service1:8080/users?bridgeEndpoint=true")
+                    .unmarshal().json(JsonLibrary.Jackson)
+                    .convertBodyTo(String.class)
+                    .log("**Respuesta de Servicio A ONLINE:** ${body}")
+                .doCatch(Exception.class)
+                    .setBody(constant("{\"error\": \"Ocurrió un error al acceder al servicio OnLINE Service1.\"}"))
+                    .log("**Ocurrió un error al acceder al servicio ONLINE - Service1.:** ${exception.message}")
+                .endDoTry();
 
-        from("direct:servicioB")
-                .routeId("ServicioB")
-                .log("**Enviando a Servicio B:** ${body}")
+        from("direct:servicioOffLINE")
+                .routeId("ServicioOffLINE")
+                .log("**Enviando a Servicio OffLINE:** ${body}")
                 .process(new ServicioBProcessor())
-                .setHeader(Exchange.HTTP_METHOD, constant("POST"))
-                .to("http://service2:5000/users?bridgeEndpoint=true");
+                .doTry()
+                    .setHeader(Exchange.HTTP_METHOD, constant("POST"))
+                    .to("http://service2:5000/users?bridgeEndpoint=true")
+                    .unmarshal().json(JsonLibrary.Jackson)
+                    .convertBodyTo(String.class)
+                    .log("**Respuesta de Servicio A OffLINE:** ${body}")
+                .doCatch(Exception.class)
+                .setBody(constant("{\"error\": \"Ocurrió un error al acceder al servicio OffLINE Service1.\"}"))
+                .log("**Ocurrió un error al acceder al servicio OffLINE - Service1.:** ${exception.message}")
+                .endDoTry();
 
         from("direct:servicioBD")
                 .routeId("ServicioBD")
