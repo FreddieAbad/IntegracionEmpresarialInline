@@ -1,3 +1,4 @@
+org\apache\camel\learn\processor\ProcesaRespuestaProcessor.class
 org\apache\camel\learn\model\ClientInfo.class
 org\apache\camel\learn\MainApp.class
 org\apache\camel\learn\processor\ServicioBProcessor.class
