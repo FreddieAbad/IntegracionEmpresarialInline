@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "10f585a9-8b4d-4470-a3ca-cc8c530dcbac",
+		"name": "Integracion Empresarial En Linea",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33824271"
+	},
+	"item": [
+		{
+			"name": "CAMEL",
+			"item": [
+				{
+					"name": "Ingresar Usuario Offline",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"codigo\": 1,\r\n        \"identificacion\": \"user1Offline\",\r\n        \"nombre\": \"Juan Perez Offline\",\r\n        \"email\": \"user2@example.com\",\r\n        \"canal\": \"offline\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/receive_client_info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"receive_client_info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ingresar Usuario Online",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"codigo\": 1,\r\n        \"identificacion\": \"user1Online\",\r\n        \"nombre\": \"Juan Perez Online\",\r\n        \"email\": \"user2@example.com\",\r\n        \"canal\": \"online\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/receive_client_info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"receive_client_info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recuperar Usuario Offline",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/users/offline",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"users",
+								"offline"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recuperar Usuario Online",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/users/online",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"users",
+								"online"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SERVICIO ONLINE",
+			"item": [
+				{
+					"name": "Ingresar Usuario Online",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"codigo\": 1,\r\n        \"identificacion\": \"user1Online\",\r\n        \"nombre\": \"Juan Perez Online\",\r\n        \"email\": \"user2@example.com\",\r\n        \"canal\": \"online\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recuperar Usuario Online",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/get_users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"get_users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SERVICIO OFFLINE",
+			"item": [
+				{
+					"name": "Ingresar Usuario Offline",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"codigo\": 1,\r\n        \"identificacion\": \"user1Offline\",\r\n        \"nombre\": \"Juan Perez Offline\",\r\n        \"email\": \"user2@example.com\",\r\n        \"canal\": \"offline\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recuperar Usuario Offline",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/get_users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"get_users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
