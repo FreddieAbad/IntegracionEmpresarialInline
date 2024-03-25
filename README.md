@@ -13,6 +13,18 @@ docker-compose up
 ```
 **La documentacion tipo Postman se adjunta en el presente directorio (Integracion Empresarial En Linea.postman_collection.json). O en caso de hacerlo manualmente, en la seccion 'REQUERIMIENTOS ABORDADOS EN EL PROYECTO'  se detalla cada servicio.**
 
+**El proyecto se encuentra configurado para que escuche en los puertos 80,5000,8080,por lo que es necesario que estos puertos esten libres para que se ejecute con normalidad**
+
+**En caso de hacer cambios en el proyecto camel, se necesita que se compile y empaquete nuevamente para que se actualice los jar (mvn clean compile package).**
+
+El proyecto camel se encuentra testeado en la siguiente version de java. En caso de buscar correr en local, colocar una version similar a: 
+
+openjdk 17.0.10 2024-01-16 LTS
+
+OpenJDK Runtime Environment Corretto-17.0.10.7.1 (build 17.0.10+7-LTS)
+
+OpenJDK 64-Bit Server VM Corretto-17.0.10.7.1 (build 17.0.10+7-LTS, mixed mode, sharing)
+
 #### Importante 
 El docker compose define 3 servicios:
 - servicio1: Servicio desarrollado en Flask que simula la empresa que gestiona clientes online.
